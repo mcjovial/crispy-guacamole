@@ -7,11 +7,10 @@ import Chat from './Pages/Chat';
 
 function App() {
   return (
-    <>
-      <h1>zend</h1>
+    <div className='App'>
       <Route path="/" component={Home} exact/>
       <Route path="/chats" component={Chat} />
-    </>
+    </div>
   );
 }
 

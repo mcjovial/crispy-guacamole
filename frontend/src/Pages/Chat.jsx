@@ -16,4 +16,4 @@ const Chat = () => {
   )
 }
 
-export default Chatf
+export default Chat
