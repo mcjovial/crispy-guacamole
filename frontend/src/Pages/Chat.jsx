@@ -1,18 +1,18 @@
-import React, { useEffect } from 'react'
-import { axios } from "axios";
+import { Box } from '@chakra-ui/react'
+import SideDrawer from '../components/miscellaneous/SideDrawer'
+import MyChats from '../components/MyChats'
+import { ChatState } from '../Context/ChatProvider'
 
 const Chat = () => {
-    const fetchChats = async () => {
-        const data = await axios.get('/api/chat');
-        console.log(data);
-    }
-
-    useEffect(() => {
-        fetchChats();
-    }, [])
+  const {user} = ChatState()
 
   return (
-    <div>Chat</div>
+    <div>
+      {user && <SideDrawer />}
+      <Box d='flex' justifyContent='space-between' w='100%' h= '91.5vh' p='10px'>
+        {user && <MyChats />}
+      </Box>
+    </div>
   )
 }
 
